@@ -15,6 +15,8 @@ Group={{ patroni_system_group }}
 # This is normally controlled by the global default set by systemd
 # StandardOutput=syslog
 
+RuntimeDirectory=postgresql
+
 ExecStartPre={{ patroni_exec_start_pre | default('') }}
 ExecStart={{ patroni_bin_dir }}/patroni {{ patroni_config_dir }}/{{ patroni_config_file }}
 
